@@ -4,10 +4,10 @@
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-7.0+-brightgreen)](https://www.mongodb.com/)
-[![Mongoose](https://img.shields.io/badge/Mongoose-7.0+-red)](https://mongoosejs.com/)
+[![Mongoose](https://img.shields.io/badge/Mongoose-7.5-red)](https://mongoosejs.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-Database layer untuk Health E-Commerce dengan MongoDB dan Mongoose ODM - dari installation sampai production-ready schemas.
+Complete database layer untuk Health E-Commerce dengan MongoDB Atlas, Mongoose ODM, schemas, relationships, dan aggregations.
 
 ---
 
@@ -20,15 +20,17 @@ health-ecommerce-database/
 ├── README.md (Ini file yang kamu baca)
 ├── starter-project/     # 📝 Untuk practice (dengan TODO)
 │   ├── README.md
+│   ├── package.json
 │   ├── config/
-│   ├── models/
+│   ├── models/ (with TODOs)
 │   ├── services/
 │   └── scripts/
-└── finished-project/    # ✅ Complete implementation
+└── finished-project/    # ✅ Complete database layer
     ├── README.md
+    ├── package.json
     ├── config/
-    ├── models/ (4 models complete!)
-    ├── services/ (3 services complete!)
+    ├── models/ (4 complete models!)
+    ├── services/
     └── scripts/ (seeding script)
 ```
 
@@ -44,554 +46,307 @@ health-ecommerce-database/
 ### Option 1: Practice dengan Starter Project
 
 ```bash
-# 1) Masuk ke starter-project
+# 1. Clone repository ini
+git clone https://github.com/your-username/health-ecommerce-database.git
+
+# 2. Masuk ke folder repository
+cd health-ecommerce-database
+
+# 3. Masuk ke starter-project
 cd starter-project
 
-# 2) Install dependencies
+# 4. Install dependencies
 npm install
 
-# 3) Setup environment
-Copy-Item .env.example .env   # Windows
-# Mac/Linux: cp .env.example .env
+# 5. Copy .env.example jadi .env
+cp .env.example .env
+# Windows: Copy-Item .env.example .env
 
-# 4) Edit .env (MONGODB_URI lokal atau Atlas)
+# 6. Edit .env - pilih MongoDB local atau Atlas
+# MONGODB_URI=mongodb://localhost:27017/health-ecommerce
+# atau
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/health-ecommerce
 
-# 5) Start MongoDB (jika lokal)
-# Windows: net start MongoDB
-# Mac: brew services start mongodb-community
-# Linux: sudo systemctl start mongod
+# 7. Start MongoDB (jika pakai local)
+mongod
 
-# 6) Seed database (isi data contoh)
+# 8. Test connection
+node test-connection.js
+
+# 9. Seed database
 npm run seed
 
-# 7) Jalankan project (jika ada script dev)
-npm run dev
+# Database terisi dengan sample data!
 ```
 
-### Option 2: Lihat Finished Project (Reference)
+### Option 2: Lihat Complete Implementation
 
 ```bash
-# 1) Masuk ke finished-project
+# 1. Clone repository (jika belum)
+git clone https://github.com/your-username/health-ecommerce-database.git
+
+# 2. Masuk ke folder repository
+cd health-ecommerce-database
+
+# 3. Masuk ke finished-project
 cd finished-project
 
-# 2) Install dependencies
+# 4. Install dependencies
 npm install
 
-# 3) Setup environment
-Copy-Item .env.example .env   # Windows
-# Mac/Linux: cp .env.example .env
-
-# 4) Edit .env dengan connection string yang benar
-
-# 5) Start MongoDB (jika lokal)
-# Windows: net start MongoDB
-# Mac: brew services start mongodb-community
-# Linux: sudo systemctl start mongod
-
-# 6) Seed database
-npm run seed
-
-# 7) Jalankan project
-npm run dev
-```
-
-## 🎯 Tujuan Pembelajaran
-
-Setelah menyelesaikan modul ini, peserta akan mampu:
-
-1. ✅ Install dan setup MongoDB di komputer lokal
-2. ✅ Menggunakan MongoDB Compass untuk manage database visually
-3. ✅ Setup MongoDB Atlas (cloud database)
-4. ✅ Melakukan query operations (CRUD, filtering, sorting)
-5. ✅ Memahami perbedaan Native Query vs Mongoose ODM
-6. ✅ Membuat schema dan model dengan Mongoose
-7. ✅ Implement relasi data (1-to-many, many-to-many)
-8. ✅ Optimasi database dengan indexing
-
-## 📂 Struktur Folder
-
-```
-Modul_2-Database_ODM_MongoDB/
-│
-├── materi.md                          # 📚 Materi pembelajaran lengkap
-│
-├── starter-project/                   # 🏁 Project awal untuk latihan
-│   ├── config/
-│   │   └── database.js                # ✅ Database connection (lengkap)
-│   ├── models/
-│   │   ├── Product.js                 # ⚠️ PERLU DILENGKAPI
-│   │   ├── User.js                    # ⚠️ PERLU DILENGKAPI
-│   │   └── Review.js                  # ⚠️ PERLU DILENGKAPI
-│   ├── services/
-│   │   └── productService.js          # ⚠️ PERLU DILENGKAPI
-│   ├── scripts/
-│   │   └── seed.js                    # ⚠️ PERLU DILENGKAPI
-│   ├── .env.example
-│   ├── package.json
-│   └── README.md
-│
-├── finished-project/                  # ✅ Project lengkap sebagai referensi
-│   ├── config/
-│   │   └── database.js                # Database connection
-│   ├── models/
-│   │   ├── Product.js                 # Complete schema
-│   │   ├── User.js                    # Complete schema
-│   │   ├── Review.js                  # Complete schema
-│   │   └── Category.js                # Complete schema
-│   ├── services/
-│   │   ├── productService.js          # Full CRUD
-│   │   ├── reviewService.js           # Full CRUD
-│   │   └── analyticsService.js        # Aggregations
-│   ├── scripts/
-│   │   └── seed.js                    # Complete seeding
-│   ├── .env.example
-│   ├── package.json
-│   └── README.md
-│
-└── README.md                          # File ini
-```
-
-## 🔧 Prerequisites
-
-Sebelum memulai, pastikan sudah install:
-
-- **Node.js** (v18+) - [Download](https://nodejs.org/)
-- **MongoDB** (v5.0+) - Install sesuai OS kamu (Windows/Mac/Linux)
-- **MongoDB Compass** (optional tapi recommended) - [Download](https://www.mongodb.com/products/compass)
-- **Code Editor** (VS Code recommended) - [Download](https://code.visualstudio.com/)
-
-## 🚀 Menjalankan Project
-
-### Persyaratan Sistem
-
-Sebelum memulai, pastikan kamu sudah menginstall:
-
-- **Node.js** versi 18 atau lebih baru ([Download di sini](https://nodejs.org/))
-- **MongoDB** (pilih salah satu):
-  - MongoDB lokal terinstall di komputer, ATAU
-  - MongoDB Atlas account (gratis)
-
-### Langkah 1: Install Dependencies
-
-1. Buka terminal atau command prompt
-2. Navigasi ke folder **starter-project** atau **finished-project** (pilih salah satu)
-3. Jalankan perintah untuk menginstall semua dependencies:
-
-```bash
-npm install
-```
-
-Tunggu sampai proses selesai. Kamu akan melihat folder `node_modules` muncul.
-
-### Langkah 2: Setup Environment Variables
-
-1. **Copy file template environment:**
-
-```bash
-# Windows PowerShell
-Copy-Item .env.example .env
-
-# Mac/Linux
+# 5. Setup .env
 cp .env.example .env
+# Edit dengan MongoDB URI kamu
+
+# 6. Start MongoDB (jika local)
+mongod
+
+# 7. Seed database
+npm run seed
+
+# Database terisi: 12 products + 5 users + 10 reviews!
 ```
 
-2. **Edit file `.env` yang baru dibuat:**
+---
 
-**Jika pakai MongoDB Lokal:**
+## 🎯 Apa yang Akan Kamu Pelajari?
 
-```env
-NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/health-products
+**Modul 2** melanjutkan dari Modul 1 (OOP) dengan membangun **database layer**!
+
+### Konsep yang Dipelajari:
+
+- ✅ **MongoDB Setup** - Local installation, Compass GUI, Atlas cloud
+- ✅ **Mongoose ODM** - Schemas, models, validations
+- ✅ **CRUD Operations** - Create, read, update, delete documents
+- ✅ **Relationships** - One-to-many, many-to-many dengan populate
+- ✅ **Aggregations** - Powerful data processing pipelines
+- ✅ **Indexing** - Performance optimization
+
+### Apa yang Dibangun:
+
+- **4 Mongoose Models** (Product, User, Order, Review)
+- **Relationships** antar models
+- **Seeding script** untuk sample data
+- **Aggregation queries** untuk analytics
+
+**Output:** Production-ready database layer untuk Express API (Modul 3)!
+
+---
+
+## 📁 Struktur Starter Project
+
+```
+starter-project/
+├── README.md              # Setup guide
+├── package.json           # Dependencies
+├── test-connection.js    # ✅ MongoDB test (ready!)
+├── config/
+│   └── database.js       # ⚠️ TODO: MongoDB connection
+├── models/
+│   ├── Product.js        # ⚠️ TODO: Product schema
+│   ├── User.js           # ⚠️ TODO: User schema
+│   ├── Order.js          # ⚠️ TODO: Order schema
+│   └── Review.js         # ⚠️ TODO: Review schema
+├── services/
+│   └── productService.js # ⚠️ TODO: CRUD operations
+└── scripts/
+    └── seed.js           # ⚠️ TODO: Database seeding
 ```
 
-**Jika pakai MongoDB Atlas (Cloud):**
+**TODOs:**
 
-```env
-NODE_ENV=development
-MONGODB_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/health-products
+- [ ] `config/database.js` - MongoDB connection setup
+- [ ] `models/*.js` - Create 4 schemas dengan validations
+- [ ] `services/productService.js` - Implement CRUD dengan Mongoose
+- [ ] `scripts/seed.js` - Seed database dengan sample data
+
+---
+
+## 📁 Struktur Finished Project
+
+```
+finished-project/
+├── README.md              # Complete guide
+├── package.json           # Dependencies
+├── test-connection.js    # ✅ Connection test
+├── config/
+│   └── database.js       # ✅ Complete connection
+├── models/
+│   ├── Product.js        # ✅ Full schema dengan validations
+│   ├── User.js           # ✅ User schema dengan bcrypt
+│   ├── Order.js          # ✅ Order schema dengan references
+│   └── Review.js         # ✅ Review schema dengan populate
+├── services/
+│   ├── productService.js # ✅ Complete CRUD operations
+│   ├── aggregation.js    # ✅ Aggregation examples
+│   └── relationship.js   # ✅ Population examples
+└── scripts/
+    └── seed.js           # ✅ Seeds 12+5+10 documents
 ```
 
-Ganti `your-username`, `your-password`, dan `your-cluster` dengan credentials Atlas kamu.
+**All implemented:**
 
-### Langkah 3: Start MongoDB
+- ✅ 4 complete Mongoose schemas
+- ✅ Relationships (1-to-many, many-to-many)
+- ✅ Aggregation pipelines (5 examples)
+- ✅ Database indexing
+- ✅ Seeding script
 
-**Jika Pakai MongoDB Lokal:**
+---
+
+## 🧪 Testing Database
+
+### Test Connection:
 
 ```bash
-# Windows
-net start MongoDB
-
-# Mac (dengan Homebrew)
-brew services start mongodb-community
-
-# Linux
-sudo systemctl start mongod
+node test-connection.js
 ```
 
-**Jika Pakai Atlas:**
+**Expected:**
 
-- Pastikan cluster sudah dalam status "Active" di Atlas dashboard
-- Connection string di `.env` sudah benar
+```
+✅ MongoDB Connected: localhost
+📊 Database: health-ecommerce
+```
 
-### Langkah 4: Seed Database (Isi Data Sample)
-
-Jalankan perintah ini untuk mengisi database dengan data contoh:
+### Seed Database:
 
 ```bash
 npm run seed
 ```
 
-Kamu akan melihat output seperti ini:
+**Expected:**
 
 ```
-✅ MongoDB Local connected successfully
-🗑️  Existing products deleted
-✅ 12 products inserted
-✅ 5 users inserted
-✅ 10 reviews inserted
-🎉 Database seeded successfully!
+🗑️  Clearing old data...
+✅ 12 products created
+✅ 5 users created
+✅ 10 reviews created
+🎉 Database seeding complete!
 ```
 
-### Langkah 5: Jalankan Project
+### View Data dengan MongoDB Compass:
 
-```bash
-npm run dev
-```
-
-Jika berhasil, kamu akan melihat:
-
-```
-✅ MongoDB Local connected successfully
-📍 Database: health-products
-```
-
-### Langkah 6: Verify Data
-
-**Menggunakan MongoDB Compass:**
-
-1. Buka MongoDB Compass
-2. Connect ke `mongodb://localhost:27017`
-3. Pilih database `health-products`
-4. Browse collections: products, users, reviews
-5. Lihat data yang baru di-seed
-
-**Menggunakan mongosh:**
-
-```bash
-mongosh
-use health-products
-db.products.find().pretty()
-```
-
-## 📚 Cara Menggunakan Modul Ini
-
-### 1️⃣ Baca Materi Terlebih Dahulu
-
-File `materi.md` berisi:
-
-- Tutorial instalasi MongoDB lokal (Windows/Mac/Linux)
-- Setup MongoDB Compass
-- Setup MongoDB Atlas
-- Konsep database dan query operations
-- Perbandingan Native vs Mongoose ODM
-- Mongoose schema & validations
-- Relasi data dan aggregation
-- Indexing dan optimization
-
-### 2️⃣ Kerjakan Starter Project
-
-```bash
-cd starter-project/
-
-# File yang perlu dilengkapi:
-# - models/Product.js (schema dengan validation)
-# - models/User.js (schema)
-# - models/Review.js (schema dengan reference)
-# - services/productService.js (CRUD functions)
-# - scripts/seed.js (seeding script)
-```
-
-**Checklist Pengerjaan:**
-
-- [ ] Product schema lengkap dengan validations
-- [ ] User schema dengan virtual fullName
-- [ ] Review schema dengan reference ke Product
-- [ ] CRUD functions di productService
-- [ ] Seeding script dengan 10+ sample products
-- [ ] Test semua operations
-
-### 3️⃣ Bandingkan dengan Finished Project
-
-Setelah selesai, compare hasil kamu dengan `finished-project/` untuk:
-
-- Lihat best practices implementation
-- Check apakah ada yang terlewat
-- Understand optimization techniques
-
-## 🎓 Konsep yang Dipelajari
-
-- **MongoDB Basics:** Collections, documents, data types
-- **Setup:** Local installation, Compass, Atlas
-- **Query Operations:** Find, filter, sort, limit, skip
-- **Mongoose ODM:** Schema, model, validation
-- **CRUD:** Create, read, update, delete
-- **Relationships:** One-to-many, many-to-many, populate
-- **Aggregation:** Pipeline, group, lookup
-- **Optimization:** Indexing strategies
-
-## 🔗 Integrasi dengan Project Health E-Commerce
-
-Database yang kamu bangun di modul ini akan digunakan untuk:
-
-- Backend API dengan Express.js
-- Authentication & Security features
-- Integration dengan payment gateway
-- Frontend React application
-- Complete fullstack e-commerce system
-
-Modul ini menjadi **foundation** untuk semua fitur yang akan dibangun selanjutnya.
+1. Open MongoDB Compass
+2. Connect: `mongodb://localhost:27017`
+3. Select database: `health-ecommerce`
+4. View collections: products, users, orders, reviews
 
 ---
 
 ## 🔗 Hubungan dengan Modul Lain
 
-- **Modul 1** → OOP concepts menjadi dasar struktur model/schema
-- **Modul 2 (This!)** → Schema & data layer dengan MongoDB/Mongoose
-- **Modul 3** → Gunakan schema ini di Express controllers & routes
-- **Modul 4** → Tambahkan authentication & security di atas API yang memakai database ini
-- **Modul 5** → Integrasi layanan eksternal yang juga bergantung pada data yang sama
+**Dari Modul 1 (OOP):**
 
-## 💡 Tips Sukses
+- ✅ Class concepts → Mongoose schema classes
+- ✅ Data validation patterns
 
-1. **Practice di mongosh** - Familiarize dengan query syntax
-2. **Use Compass** - Visualize data structure dan results
-3. **Test incrementally** - Jangan tunggu semua selesai
-4. **Read error messages** - MongoDB error messages sangat helpful
-5. **Understand trade-offs** - Embedded vs Referenced, Index benefits vs costs
-6. **Use Atlas for team** - Share database dengan team members
+**Modul 2 (This!)** → Builds Database Layer
+
+- 🆕 MongoDB setup (local + cloud)
+- 🆕 Mongoose schemas & models
+- 🆕 CRUD operations
+- 🆕 Relationships & aggregations
+
+**Ke Modul 3 (Express):**
+
+- → Models will be used in controllers
+- → Database queries in API endpoints
+
+**Ke Modul 4 (Auth):**
+
+- → User model for authentication
+- → Password hashing with bcrypt
+
+**Ke Modul 5 (Integration):**
+
+- → Product model extended dengan kemenkesId
+- → Integration dengan external data sources
+
+---
 
 ## 🐛 Troubleshooting
 
-### Error: "Cannot find module 'mongoose'"
+### ❌ "MongoServerError: connect ECONNREFUSED"
 
 **Solusi:**
 
 ```bash
-npm install
+# Check MongoDB running
+mongosh
+
+# If not running, start it:
+# Windows: Services → Start "MongoDB Server"
+# Mac: brew services start mongodb-community
+# Linux: sudo systemctl start mongod
 ```
 
-Pastikan semua dependencies terinstall dengan benar.
-
-### Error: "MongooseServerSelectionError: connect ECONNREFUSED"
+### ❌ "ValidationError: Path `name` is required"
 
 **Solusi:**
 
-- **Jika pakai MongoDB Lokal:** Pastikan MongoDB service sudah running
-  ```bash
-  # Windows: net start MongoDB
-  # Mac: brew services start mongodb-community
-  # Linux: sudo systemctl start mongod
-  ```
-- **Jika pakai Atlas:** Check connection string di `.env` sudah benar (username, password, cluster name)
+- Check schema required fields
+- Ensure all required fields provided
+- Review seed.js data
 
-### Error: "ValidationError: Path 'name' is required"
+### ❌ "MongoServerError: E11000 duplicate key"
 
 **Solusi:**
 
-- Ada required field yang belum diisi saat create/update document
-- Check error message untuk tahu field mana yang missing
-- Pastikan semua required fields terisi
-
-### Error: "E11000 duplicate key error"
-
-**Solusi:**
-
-- Ada field unique (seperti email) yang sudah ada di database
-- Gunakan email/username yang berbeda
-- Atau clear database dan seed ulang: `npm run seed`
-
-### Error: "Cannot read property '\_id' of null"
-
-**Solusi:**
-
-- Document yang dicari tidak ditemukan
-- Check apakah ID yang digunakan valid dan ada di database
-- Gunakan MongoDB Compass untuk verify data
-
-## 📖 Referensi
-
-- [MongoDB Manual](https://docs.mongodb.com/manual/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/)
-- [MongoDB Atlas](https://docs.atlas.mongodb.com/)
-- [MongoDB Compass](https://docs.mongodb.com/compass/)
-
-## 🆘 Butuh Bantuan?
-
-Jika mengalami kendala:
-
-1. Check bagian **Troubleshooting** di atas
-2. Compare dengan `finished-project` untuk lihat reference implementation
-3. Gunakan MongoDB Compass untuk visualize dan debug data
-4. Tanya mentor atau instruktur jika masih stuck
+- Unique constraint violated
+- Clear database: `db.dropDatabase()`
+- Run seed again: `npm run seed`
 
 ---
 
-## 🧾 Penutup / Summary – Database & ODM (MongoDB & Mongoose)
+## 💡 Tips Sukses
 
-### 🧩 Ringkasan Poin Utama
-
-Pada modul ini, peserta telah mempelajari **database NoSQL dengan MongoDB** dan **Mongoose ODM**, mencakup instalasi, setup tools (Compass & Atlas), query operations, schema modeling, relasi data, aggregation, dan optimization.
-
-Peserta diharapkan kini mampu:
-
-- Install dan configure MongoDB di berbagai platform (Windows/Mac/Linux)
-- Menggunakan MongoDB Compass untuk visualisasi dan management database
-- Setup MongoDB Atlas untuk cloud database production-ready
-- Melakukan CRUD operations dengan native queries maupun Mongoose
-- Membuat schemas dengan proper validation dan relationships
-- Menggunakan aggregation pipeline untuk data analytics
-- Optimasi query performance dengan indexing
-
-Dengan pemahaman ini, peserta telah menguasai **database fundamentals** yang essential untuk backend API development dengan Express.js di modul selanjutnya.
-
-### 🎯 Kaitan dengan Tujuan Pembelajaran
-
-| Tujuan Pembelajaran      | Pencapaian Melalui Materi                                                              |
-| ------------------------ | -------------------------------------------------------------------------------------- |
-| Install MongoDB lokal    | Tutorial step-by-step untuk Windows, Mac, Linux dengan troubleshooting guide           |
-| Setup cloud database     | MongoDB Atlas setup lengkap dari account creation sampai connection testing            |
-| Query operations         | Practice find, filter, sort, aggregate dengan native MongoDB dan Mongoose              |
-| Schema & validation      | Mongoose schemas dengan built-in validations, custom error messages, dan type checking |
-| Data relationships       | Implementasi one-to-many dan many-to-many dengan populate untuk join data              |
-| Performance optimization | Text index, compound index, dan query analysis dengan explain()                        |
-
-### 💭 Refleksi Akhir
-
-Setelah menyelesaikan modul ini, coba renungkan:
-
-**"Mengapa MongoDB lebih cocok untuk Health E-Commerce dibanding SQL database? Apa trade-offs yang perlu dipertimbangkan?"**
-
-**"Kapan sebaiknya menggunakan embedded data vs referenced data dalam MongoDB? Berikan contoh case dari project kamu."**
-
-**"Apa perbedaan yang paling signifikan antara MongoDB native queries dan Mongoose ODM? Kapan kamu akan pilih salah satunya?"**
-
-Refleksi ini membantu memahami decision-making dalam database design dan mempersiapkan untuk integrate database dengan Express API.
-
-### 📚 Sumber Referensi
-
-- [MongoDB Manual](https://docs.mongodb.com/manual/) - Official MongoDB documentation lengkap
-- [Mongoose Documentation](https://mongoosejs.com/docs/) - Comprehensive guide untuk Mongoose ODM
-- [MongoDB University](https://university.mongodb.com/) - Free courses dari MongoDB Inc.
-- [MongoDB Atlas Docs](https://docs.atlas.mongodb.com/) - Cloud database management guide
-- [Database Design Patterns](https://www.mongodb.com/developer/products/mongodb/schema-design-anti-pattern-summary/) - Best practices untuk MongoDB schema design
-
-### 📘 Glosarium
-
-| Istilah         | Definisi Singkat                                                                                     |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| **NoSQL**       | Database yang tidak menggunakan tabel relational, menyimpan data dalam format fleksibel seperti JSON |
-| **Collection**  | Grup dari documents dalam MongoDB, analog dengan "table" di SQL database                             |
-| **Document**    | Single record dalam MongoDB collection, disimpan dalam format BSON (Binary JSON)                     |
-| **Schema**      | Structure atau blueprint yang mendefinisikan fields, types, dan validations untuk documents          |
-| **ODM**         | Object Data Modeling - library yang menyederhanakan interaksi dengan database menggunakan objects    |
-| **Mongoose**    | ODM library paling populer untuk MongoDB di Node.js ecosystem                                        |
-| **Populate**    | Method untuk join dan retrieve referenced documents dari collection lain                             |
-| **Aggregation** | Pipeline-based query untuk perform complex data analysis dan transformations                         |
-| **Index**       | Database structure yang meningkatkan speed query operations                                          |
-| **Atlas**       | MongoDB cloud hosting service dengan free tier untuk development                                     |
-| **Compass**     | Official GUI tool untuk visualize dan manage MongoDB databases                                       |
-| **ObjectId**    | Unique identifier 12-byte yang auto-generated untuk setiap MongoDB document                          |
-
-### 💬 Kalimat Penutup
-
-Dengan menyelesaikan modul ini, peserta telah memahami **database management dengan MongoDB dan Mongoose ODM**.
-
-Selanjutnya, peserta akan mempelajari **Backend Development dengan Express.js** untuk membangun REST API yang connect dengan database ini, creating complete backend system.
+1. **Start dengan starter** - Practice creates understanding
+2. **Use MongoDB Compass** - Visual GUI helps learning
+3. **Test queries immediately** - See results in real-time
+4. **Read Mongoose docs** - Understand schema types
+5. **Check finished when stuck** - But understand, don't copy
+6. **Seed data frequently** - Fresh data for testing
 
 ---
 
-## 🧾 Penutup / Summary – Database & ODM (MongoDB & Mongoose)
+## 📚 Resources
 
-### 🧩 Ringkasan Poin Utama
+**Documentation:**
 
-Pada modul ini, peserta telah mempelajari **database NoSQL dengan MongoDB** dan **Mongoose ODM**, mencakup instalasi, setup tools (Compass & Atlas), query operations, schema modeling, relasi data, aggregation, dan optimization.
+- [MongoDB Manual](https://docs.mongodb.com/)
+- [Mongoose Guide](https://mongoosejs.com/docs/guide.html)
+- [MongoDB Compass](https://www.mongodb.com/products/compass)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
-Peserta diharapkan kini mampu:
+**Tools:**
 
-- Install dan configure MongoDB di berbagai platform (Windows/Mac/Linux)
-- Menggunakan MongoDB Compass untuk visualisasi dan management database
-- Setup MongoDB Atlas untuk cloud database production-ready
-- Melakukan CRUD operations dengan native queries maupun Mongoose
-- Membuat schemas dengan proper validation dan relationships
-- Menggunakan aggregation pipeline untuk data analytics
-- Optimasi query performance dengan indexing
-
-Dengan pemahaman ini, peserta telah menguasai **database fundamentals** yang essential untuk backend API development dengan Express.js di modul selanjutnya.
-
-### 🎯 Kaitan dengan Tujuan Pembelajaran
-
-| Tujuan Pembelajaran      | Pencapaian Melalui Materi                                                              |
-| ------------------------ | -------------------------------------------------------------------------------------- |
-| Install MongoDB lokal    | Tutorial step-by-step untuk Windows, Mac, Linux dengan troubleshooting guide           |
-| Setup cloud database     | MongoDB Atlas setup lengkap dari account creation sampai connection testing            |
-| Query operations         | Practice find, filter, sort, aggregate dengan native MongoDB dan Mongoose              |
-| Schema & validation      | Mongoose schemas dengan built-in validations, custom error messages, dan type checking |
-| Data relationships       | Implementasi one-to-many dan many-to-many dengan populate untuk join data              |
-| Performance optimization | Text index, compound index, dan query analysis dengan explain()                        |
-
-### 💭 Refleksi Akhir
-
-Setelah menyelesaikan modul ini, coba renungkan:
-
-**"Mengapa MongoDB lebih cocok untuk Health E-Commerce dibanding SQL database? Apa trade-offs yang perlu dipertimbangkan?"**
-
-**"Kapan sebaiknya menggunakan embedded data vs referenced data dalam MongoDB? Berikan contoh case dari project kamu."**
-
-**"Apa perbedaan yang paling signifikan antara MongoDB native queries dan Mongoose ODM? Kapan kamu akan pilih salah satunya?"**
-
-Refleksi ini membantu memahami decision-making dalam database design dan mempersiapkan untuk integrate database dengan Express API.
-
-### 📚 Sumber Referensi
-
-- [MongoDB Manual](https://docs.mongodb.com/manual/) - Official MongoDB documentation lengkap
-- [Mongoose Documentation](https://mongoosejs.com/docs/) - Comprehensive guide untuk Mongoose ODM
-- [MongoDB University](https://university.mongodb.com/) - Free courses dari MongoDB Inc.
-- [MongoDB Atlas Docs](https://docs.atlas.mongodb.com/) - Cloud database management guide
-- [Database Design Patterns](https://www.mongodb.com/developer/products/mongodb/schema-design-anti-pattern-summary/) - Best practices untuk MongoDB schema design
-
-### 📘 Glosarium
-
-| Istilah         | Definisi Singkat                                                                                     |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| **NoSQL**       | Database yang tidak menggunakan tabel relational, menyimpan data dalam format fleksibel seperti JSON |
-| **Collection**  | Grup dari documents dalam MongoDB, analog dengan "table" di SQL database                             |
-| **Document**    | Single record dalam MongoDB collection, disimpan dalam format BSON (Binary JSON)                     |
-| **Schema**      | Structure atau blueprint yang mendefinisikan fields, types, dan validations untuk documents          |
-| **ODM**         | Object Data Modeling - library yang menyederhanakan interaksi dengan database menggunakan objects    |
-| **Mongoose**    | ODM library paling populer untuk MongoDB di Node.js ecosystem                                        |
-| **Populate**    | Method untuk join dan retrieve referenced documents dari collection lain                             |
-| **Aggregation** | Pipeline-based query untuk perform complex data analysis dan transformations                         |
-| **Index**       | Database structure yang meningkatkan speed query operations                                          |
-| **Atlas**       | MongoDB cloud hosting service dengan free tier untuk development                                     |
-| **Compass**     | Official GUI tool untuk visualize dan manage MongoDB databases                                       |
-| **ObjectId**    | Unique identifier 12-byte yang auto-generated untuk setiap MongoDB document                          |
-
-### 💬 Kalimat Penutup
-
-Dengan menyelesaikan modul ini, peserta telah memahami **database management dengan MongoDB dan Mongoose ODM**.
-
-Selanjutnya, peserta akan mempelajari **Backend Development dengan Express.js** untuk membangun REST API yang connect dengan database ini, creating complete backend system.
-
----
-
-**Happy Learning! 💾🚀**
-
-_Disusun oleh Pusbang Talenta Digital_
+- [MongoDB Compass](https://www.mongodb.com/products/compass) - Database GUI
+- [Studio 3T](https://studio3t.com/) - Alternative MongoDB IDE
 
 ---
 
 ## 🚀 Next Steps
 
-1. ✅ Verifikasi data di Compass atau mongosh setelah seeding
-2. ✅ Pastikan CRUD dasar bekerja lewat services/models
-3. ➡️ Lanjut ke **Modul 3** – Build REST API dengan Express menggunakan schema ini
+After completing this module:
+
+1. ✅ **Verify 4 models** working with Compass
+2. ✅ **Test CRUD operations** in isolation
+3. ➡️ **Modul 3** - Build Express API using these models
+4. ➡️ **Modul 4** - Add authentication with User model
+5. ➡️ **Modul 5** - External integrations
+
+---
+
+**Happy Database Building! 💾**
+
+_Modul 2 - Database & Mongoose ODM_  
+_Part of Health E-Commerce Backend Series_
+
+---
+
+**📁 Repository Info:**
+
+- **Name:** `health-ecommerce-database`
+- **Type:** Database Layer (Models & Schemas)
+- **Structure:** 1 Repo, 2 Folders (starter + finished)
