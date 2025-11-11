@@ -14,10 +14,10 @@ const connectDB = async () => {
       ? "Atlas (Cloud)"
       : "Local";
 
-    console.log(`✅ MongoDB ${dbType} connected successfully`);
-    console.log(`📍 Database: ${mongoose.connection.name}`);
+    console.log(` MongoDB ${dbType} connected successfully`);
+    console.log(` Database: ${mongoose.connection.name}`);
   } catch (error) {
-    console.error("❌ MongoDB connection error:", error.message);
+    console.error(" MongoDB connection error:", error.message);
     process.exit(1);
   }
 };

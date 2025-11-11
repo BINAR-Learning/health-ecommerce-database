@@ -1,5 +1,5 @@
 /**
- * ⚠️ FILE INI PERLU DILENGKAPI
+ *  FILE INI PERLU DILENGKAPI
  *
  * Database Seeding Script
  * Mengisi database dengan sample data
@@ -40,15 +40,15 @@ async function seedDatabase() {
     // TODO: Connect to database
     // TODO: Delete existing products
     // await Product.deleteMany();
-    // console.log('🗑️  Existing products deleted');
+    // console.log('  Existing products deleted');
     // TODO: Insert new products
     // const created = await Product.insertMany(products);
-    // console.log(`✅ ${created.length} products inserted`);
+    // console.log(` ${created.length} products inserted`);
     // TODO: Log sample product IDs
     // TODO: Exit
     // process.exit(0);
   } catch (error) {
-    console.error("❌ Seeding error:", error);
+    console.error(" Seeding error:", error);
     process.exit(1);
   }
 }

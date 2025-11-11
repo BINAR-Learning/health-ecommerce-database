@@ -1,5 +1,5 @@
 /**
- * ⚠️ FILE INI PERLU DILENGKAPI
+ *  FILE INI PERLU DILENGKAPI
  *
  * Product Model
  * Schema untuk produk kesehatan

@@ -1,4 +1,4 @@
-# 💾 health-ecommerce-database
+# health-ecommerce-database
 
 > **MongoDB & Mongoose ODM untuk Health E-Commerce**
 
@@ -11,21 +11,21 @@ Complete database layer untuk Health E-Commerce dengan MongoDB Atlas, Mongoose O
 
 ---
 
-## 📦 Apa yang Ada di Repository Ini?
+## Apa yang Ada di Repository Ini?
 
 Repository ini berisi **2 versi project**:
 
 ```
 health-ecommerce-database/
 ├── README.md (Ini file yang kamu baca)
-├── starter-project/     # 📝 Untuk practice (dengan TODO)
+├── starter-project/     #  Untuk practice (dengan TODO)
 │   ├── README.md
 │   ├── package.json
 │   ├── config/
 │   ├── models/ (with TODOs)
 │   ├── services/
 │   └── scripts/
-└── finished-project/    # ✅ Complete database layer
+└── finished-project/    #  Complete database layer
     ├── README.md
     ├── package.json
     ├── config/
@@ -41,7 +41,7 @@ health-ecommerce-database/
 
 ---
 
-## 🚀 Quick Start (Untuk Newbie)
+## Quick Start (Untuk Newbie)
 
 ### Option 1: Practice dengan Starter Project
 
@@ -109,18 +109,18 @@ npm run seed
 
 ---
 
-## 🎯 Apa yang Akan Kamu Pelajari?
+## Apa yang Akan Kamu Pelajari?
 
 **Modul 2** melanjutkan dari Modul 1 (OOP) dengan membangun **database layer**!
 
 ### Konsep yang Dipelajari:
 
-- ✅ **MongoDB Setup** - Local installation, Compass GUI, Atlas cloud
-- ✅ **Mongoose ODM** - Schemas, models, validations
-- ✅ **CRUD Operations** - Create, read, update, delete documents
-- ✅ **Relationships** - One-to-many, many-to-many dengan populate
-- ✅ **Aggregations** - Powerful data processing pipelines
-- ✅ **Indexing** - Performance optimization
+- **MongoDB Setup** - Local installation, Compass GUI, Atlas cloud
+- **Mongoose ODM** - Schemas, models, validations
+- **CRUD Operations** - Create, read, update, delete documents
+- **Relationships** - One-to-many, many-to-many dengan populate
+- **Aggregations** - Powerful data processing pipelines
+- **Indexing** - Performance optimization
 
 ### Apa yang Dibangun:
 
@@ -133,24 +133,24 @@ npm run seed
 
 ---
 
-## 📁 Struktur Starter Project
+## Struktur Starter Project
 
 ```
 starter-project/
 ├── README.md              # Setup guide
 ├── package.json           # Dependencies
-├── test-connection.js    # ✅ MongoDB test (ready!)
+├── test-connection.js    #  MongoDB test (ready!)
 ├── config/
-│   └── database.js       # ⚠️ TODO: MongoDB connection
+│   └── database.js       #  TODO: MongoDB connection
 ├── models/
-│   ├── Product.js        # ⚠️ TODO: Product schema
-│   ├── User.js           # ⚠️ TODO: User schema
-│   ├── Order.js          # ⚠️ TODO: Order schema
-│   └── Review.js         # ⚠️ TODO: Review schema
+│   ├── Product.js        #  TODO: Product schema
+│   ├── User.js           #  TODO: User schema
+│   ├── Order.js          #  TODO: Order schema
+│   └── Review.js         #  TODO: Review schema
 ├── services/
-│   └── productService.js # ⚠️ TODO: CRUD operations
+│   └── productService.js #  TODO: CRUD operations
 └── scripts/
-    └── seed.js           # ⚠️ TODO: Database seeding
+    └── seed.js           #  TODO: Database seeding
 ```
 
 **TODOs:**
@@ -162,39 +162,39 @@ starter-project/
 
 ---
 
-## 📁 Struktur Finished Project
+## Struktur Finished Project
 
 ```
 finished-project/
 ├── README.md              # Complete guide
 ├── package.json           # Dependencies
-├── test-connection.js    # ✅ Connection test
+├── test-connection.js    #  Connection test
 ├── config/
-│   └── database.js       # ✅ Complete connection
+│   └── database.js       #  Complete connection
 ├── models/
-│   ├── Product.js        # ✅ Full schema dengan validations
-│   ├── User.js           # ✅ User schema dengan bcrypt
-│   ├── Order.js          # ✅ Order schema dengan references
-│   └── Review.js         # ✅ Review schema dengan populate
+│   ├── Product.js        #  Full schema dengan validations
+│   ├── User.js           #  User schema dengan bcrypt
+│   ├── Order.js          #  Order schema dengan references
+│   └── Review.js         #  Review schema dengan populate
 ├── services/
-│   ├── productService.js # ✅ Complete CRUD operations
-│   ├── aggregation.js    # ✅ Aggregation examples
-│   └── relationship.js   # ✅ Population examples
+│   ├── productService.js #  Complete CRUD operations
+│   ├── aggregation.js    #  Aggregation examples
+│   └── relationship.js   #  Population examples
 └── scripts/
-    └── seed.js           # ✅ Seeds 12+5+10 documents
+    └── seed.js           #  Seeds 12+5+10 documents
 ```
 
 **All implemented:**
 
-- ✅ 4 complete Mongoose schemas
-- ✅ Relationships (1-to-many, many-to-many)
-- ✅ Aggregation pipelines (5 examples)
-- ✅ Database indexing
-- ✅ Seeding script
+- 4 complete Mongoose schemas
+- Relationships (1-to-many, many-to-many)
+- Aggregation pipelines (5 examples)
+- Database indexing
+- Seeding script
 
 ---
 
-## 🧪 Testing Database
+## Testing Database
 
 ### Test Connection:
 
@@ -205,8 +205,8 @@ node test-connection.js
 **Expected:**
 
 ```
-✅ MongoDB Connected: localhost
-📊 Database: health-ecommerce
+ MongoDB Connected: localhost
+ Database: health-ecommerce
 ```
 
 ### Seed Database:
@@ -218,11 +218,11 @@ npm run seed
 **Expected:**
 
 ```
-🗑️  Clearing old data...
-✅ 12 products created
-✅ 5 users created
-✅ 10 reviews created
-🎉 Database seeding complete!
+  Clearing old data...
+ 12 products created
+ 5 users created
+ 10 reviews created
+ Database seeding complete!
 ```
 
 ### View Data dengan MongoDB Compass:
@@ -234,19 +234,19 @@ npm run seed
 
 ---
 
-## 🔗 Hubungan dengan Modul Lain
+## Hubungan dengan Modul Lain
 
 **Dari Modul 1 (OOP):**
 
-- ✅ Class concepts → Mongoose schema classes
-- ✅ Data validation patterns
+- Class concepts → Mongoose schema classes
+- Data validation patterns
 
 **Modul 2 (This!)** → Builds Database Layer
 
-- 🆕 MongoDB setup (local + cloud)
-- 🆕 Mongoose schemas & models
-- 🆕 CRUD operations
-- 🆕 Relationships & aggregations
+-  MongoDB setup (local + cloud)
+-  Mongoose schemas & models
+-  CRUD operations
+-  Relationships & aggregations
 
 **Ke Modul 3 (Express):**
 
@@ -265,9 +265,9 @@ npm run seed
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### ❌ "MongoServerError: connect ECONNREFUSED"
+### "MongoServerError: connect ECONNREFUSED"
 
 **Solusi:**
 
@@ -281,7 +281,7 @@ mongosh
 # Linux: sudo systemctl start mongod
 ```
 
-### ❌ "ValidationError: Path `name` is required"
+### "ValidationError: Path `name` is required"
 
 **Solusi:**
 
@@ -289,7 +289,7 @@ mongosh
 - Ensure all required fields provided
 - Review seed.js data
 
-### ❌ "MongoServerError: E11000 duplicate key"
+### "MongoServerError: E11000 duplicate key"
 
 **Solusi:**
 
@@ -299,7 +299,7 @@ mongosh
 
 ---
 
-## 💡 Tips Sukses
+## Tips Sukses
 
 1. **Start dengan starter** - Practice creates understanding
 2. **Use MongoDB Compass** - Visual GUI helps learning
@@ -310,7 +310,7 @@ mongosh
 
 ---
 
-## 📚 Resources
+## Resources
 
 **Documentation:**
 
@@ -326,26 +326,26 @@ mongosh
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 After completing this module:
 
-1. ✅ **Verify 4 models** working with Compass
-2. ✅ **Test CRUD operations** in isolation
-3. ➡️ **Modul 3** - Build Express API using these models
-4. ➡️ **Modul 4** - Add authentication with User model
-5. ➡️ **Modul 5** - External integrations
+1.  **Verify 4 models** working with Compass
+2.  **Test CRUD operations** in isolation
+3.   **Modul 3** - Build Express API using these models
+4.   **Modul 4** - Add authentication with User model
+5.   **Modul 5** - External integrations
 
 ---
 
-**Happy Database Building! 💾**
+**Happy Database Building! **
 
 _Modul 2 - Database & Mongoose ODM_  
 _Part of Health E-Commerce Backend Series_
 
 ---
 
-**📁 Repository Info:**
+** Repository Info:**
 
 - **Name:** `health-ecommerce-database`
 - **Type:** Database Layer (Models & Schemas)

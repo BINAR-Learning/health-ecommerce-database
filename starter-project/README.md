@@ -1,47 +1,47 @@
-# 🏁 Starter Project - Health Products Database
+#  Starter Project - Health Products Database
 
-## 📝 Deskripsi
+## Deskripsi
 
 Ini adalah **starter project** untuk pembelajaran Database & MongoDB dengan Mongoose ODM. Project ini berisi struktur dasar dengan beberapa bagian yang perlu kamu lengkapi sebagai latihan.
 
-## 🎯 Tujuan
+## Tujuan
 
 Dengan mengerjakan starter project ini, kamu akan:
 
-1. ✅ Membuat Mongoose schemas dengan validation lengkap
-2. ✅ Implementasi CRUD operations
-3. ✅ Setup relasi antar models (references)
-4. ✅ Membuat seeding script untuk sample data
-5. ✅ Practice query operations dan aggregation
+1.  Membuat Mongoose schemas dengan validation lengkap
+2.  Implementasi CRUD operations
+3.  Setup relasi antar models (references)
+4.  Membuat seeding script untuk sample data
+5.  Practice query operations dan aggregation
 
-## 📂 Struktur Folder
+## Struktur Folder
 
 ```
 starter-project/
 ├── config/
-│   └── database.js         # ✅ Sudah lengkap - Database connection
+│   └── database.js         #  Sudah lengkap - Database connection
 ├── models/
-│   ├── Product.js          # ⚠️ PERLU DILENGKAPI
-│   ├── User.js             # ⚠️ PERLU DILENGKAPI
-│   └── Review.js           # ⚠️ PERLU DILENGKAPI
+│   ├── Product.js          #  PERLU DILENGKAPI
+│   ├── User.js             #  PERLU DILENGKAPI
+│   └── Review.js           #  PERLU DILENGKAPI
 ├── services/
-│   └── productService.js   # ⚠️ PERLU DILENGKAPI
+│   └── productService.js   #  PERLU DILENGKAPI
 ├── scripts/
-│   └── seed.js            # ⚠️ PERLU DILENGKAPI
-├── .env.example           # ✅ Template environment variables
-├── package.json           # ✅ Sudah lengkap
+│   └── seed.js            #  PERLU DILENGKAPI
+├── .env.example           #  Template environment variables
+├── package.json           #  Sudah lengkap
 └── README.md              # File ini
 ```
 
-## 🔧 Setup & Instalasi
+## Setup & Instalasi
 
-### 1️⃣ Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 2️⃣ Setup Environment Variables
+### Setup Environment Variables
 
 Copy `.env.example` menjadi `.env`:
 
@@ -69,7 +69,7 @@ NODE_ENV=development
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/health-products
 ```
 
-### 3️⃣ Pastikan MongoDB Running
+### Pastikan MongoDB Running
 
 **Lokal:**
 
@@ -89,9 +89,9 @@ sudo systemctl start mongod
 - Pastikan cluster sudah active
 - Connection string sudah benar di `.env`
 
-## 📝 Tugas yang Perlu Dikerjakan
+## Tugas yang Perlu Dikerjakan
 
-### ⚠️ 1. Lengkapi `models/Product.js`
+### 1. Lengkapi `models/Product.js`
 
 Buat Mongoose schema dengan fields:
 
@@ -108,7 +108,7 @@ Buat Mongoose schema dengan fields:
 
 **Hint:** Lihat `finished-project/models/Product.js` untuk reference
 
-### ⚠️ 2. Lengkapi `models/User.js`
+### 2. Lengkapi `models/User.js`
 
 Buat Mongoose schema dengan fields:
 
@@ -128,7 +128,7 @@ userSchema.virtual("fullName").get(function () {
 });
 ```
 
-### ⚠️ 3. Lengkapi `models/Review.js`
+### 3. Lengkapi `models/Review.js`
 
 Buat Mongoose schema dengan fields:
 
@@ -140,7 +140,7 @@ Buat Mongoose schema dengan fields:
 
 **Hint:** Gunakan `mongoose.Schema.Types.ObjectId` untuk reference
 
-### ⚠️ 4. Lengkapi `services/productService.js`
+### 4. Lengkapi `services/productService.js`
 
 Implementasikan functions:
 
@@ -176,7 +176,7 @@ Implementasikan functions:
 
 **Hint:** Gunakan try-catch untuk error handling
 
-### ⚠️ 5. Lengkapi `scripts/seed.js`
+### 5. Lengkapi `scripts/seed.js`
 
 Buat seeding script:
 
@@ -193,7 +193,7 @@ Buat seeding script:
 - 2 Medical Equipment
 - 2 Medicine/Others
 
-## ✅ Checklist Pengerjaan
+## Checklist Pengerjaan
 
 ### Setup
 
@@ -234,7 +234,7 @@ Buat seeding script:
 - [ ] Soft delete product
 - [ ] Verify di Compass
 
-## 🧪 Testing
+## Testing
 
 ### Via Node.js Script
 
@@ -284,7 +284,7 @@ db.products.find()
 db.products.find({ category: "Vitamin" })
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### MongoDB Connection Error
 
@@ -311,7 +311,7 @@ db.products.find({ category: "Vitamin" })
 - Check format ObjectId valid (24 hex characters)
 - Verify referenced document exists
 
-## 💡 Tips
+## Tips
 
 1. **Baca materi.md dulu** - Pahami konsep sebelum coding
 2. **Start simple** - Schema basic dulu, validation belakangan
@@ -319,20 +319,20 @@ db.products.find({ category: "Vitamin" })
 4. **Use Compass** - Visualize data untuk verify
 5. **Check finished-project** - Kalau stuck, lihat reference (tapi jangan langsung copy!)
 
-## 🔗 Referensi
+## Referensi
 
 - [Mongoose Documentation](https://mongoosejs.com/docs/)
 - [MongoDB Manual](https://docs.mongodb.com/manual/)
 - [MongoDB Atlas](https://docs.atlas.mongodb.com/)
 - [MongoDB Compass Guide](https://docs.mongodb.com/compass/)
 
-## 🎯 Tujuan Akhir
+## Tujuan Akhir
 
 Setelah menyelesaikan starter project:
 
-- ✅ Bisa membuat Mongoose schemas dengan validation
-- ✅ Bisa implement CRUD operations
-- ✅ Paham relasi data di MongoDB
-- ✅ Ready untuk Modul 3 (Express API)
+- Bisa membuat Mongoose schemas dengan validation
+- Bisa implement CRUD operations
+- Paham relasi data di MongoDB
+- Ready untuk Modul 3 (Express API)
 
-**Selamat mengerjakan! 💾🚀**
+**Selamat mengerjakan! **
