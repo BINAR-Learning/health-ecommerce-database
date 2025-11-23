@@ -154,25 +154,25 @@ async function seedDatabase() {
   try {
     await connectDB();
 
-    console.log("\n Starting database seeding...\n");
+    console.log("\nStarting database seeding...\n");
 
     // Delete existing data
     await Product.deleteMany();
-    console.log("  Existing products deleted");
+    console.log("Existing products deleted");
 
     await User.deleteMany();
-    console.log("  Existing users deleted");
+    console.log("Existing users deleted");
 
     await Review.deleteMany();
-    console.log("  Existing reviews deleted");
+    console.log("Existing reviews deleted");
 
     // Insert products
     const createdProducts = await Product.insertMany(products);
-    console.log(` ${createdProducts.length} products inserted`);
+    console.log(`${createdProducts.length} products inserted`);
 
     // Insert users
     const createdUsers = await User.insertMany(users);
-    console.log(` ${createdUsers.length} users inserted`);
+    console.log(`${createdUsers.length} users inserted`);
 
     // Insert sample reviews
     const reviews = [
@@ -250,29 +250,29 @@ async function seedDatabase() {
     ];
 
     const createdReviews = await Review.insertMany(reviews);
-    console.log(` ${createdReviews.length} reviews inserted`);
+    console.log(`${createdReviews.length} reviews inserted`);
 
     // Display summary
-    console.log("\n Database Summary:");
+    console.log("\nDatabase Summary:");
     console.log(`   Products: ${createdProducts.length}`);
     console.log(`   Users: ${createdUsers.length}`);
     console.log(`   Reviews: ${createdReviews.length}`);
 
-    console.log("\n Sample Product IDs:");
+    console.log("\nSample Product IDs:");
     createdProducts.slice(0, 3).forEach((product) => {
       console.log(`   - ${product.name}: ${product._id}`);
     });
 
-    console.log("\n Sample User IDs:");
+    console.log("\nSample User IDs:");
     createdUsers.slice(0, 2).forEach((user) => {
       console.log(`   - ${user.firstName} ${user.lastName}: ${user._id}`);
     });
 
-    console.log("\n Database seeded successfully!\n");
+    console.log("\nDatabase seeded successfully!\n");
 
     process.exit(0);
   } catch (error) {
-    console.error("\n Seeding error:", error);
+    console.error("\nSeeding error:", error);
     process.exit(1);
   }
 }

@@ -1,4 +1,4 @@
-#  Starter Project - Health Products Database
+# Starter Project - Health Products Database
 
 ## Deskripsi
 
@@ -236,37 +236,29 @@ Buat seeding script:
 
 ## Testing
 
-### Via Node.js Script
+### Via Node.js Test Script
 
-Buat file `test.js`:
+File `test.js` sudah tersedia dengan 7 test cases:
 
-```javascript
-const connectDB = require("./config/database");
-const productService = require("./services/productService");
-
-async function test() {
-  await connectDB();
-
-  // Test CREATE
-  const created = await productService.createProduct({
-    name: "Test Product",
-    description: "Test description",
-    category: "Vitamin",
-    price: 50000,
-    stock: 20,
-    manufacturer: "Test Manufacturer",
-  });
-  console.log("Created:", created);
-
-  // Test READ
-  const all = await productService.getAllProducts();
-  console.log("All products:", all);
-
-  process.exit(0);
-}
-
-test();
+```bash
+node test.js
 ```
+
+**Test Cases:**
+
+1. ✅ Database Connection (sudah aktif)
+2. ⚠️ Create Product (uncomment setelah implement)
+3. ⚠️ Get All Products (uncomment setelah implement)
+4. ⚠️ Get Product by ID (uncomment setelah implement)
+5. ⚠️ Filter by Category (uncomment setelah implement)
+6. ⚠️ Update Product (uncomment setelah implement)
+7. ⚠️ Soft Delete Product (uncomment setelah implement)
+
+**Cara Pakai:**
+
+- Jalankan `node test.js` untuk cek koneksi database
+- Uncomment test sesuai progress implementasi kamu
+- Test satu per satu untuk verify setiap function
 
 ### Via MongoDB Compass
 
